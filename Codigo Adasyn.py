@@ -14,7 +14,7 @@ df_adasyn2["version"]=df_adasyn2["version"].fillna(100)
 df_adasyn2["salary_id"]=df_adasyn2["salary_id"].fillna(100)
 df_adasyn2['clase'] =df_adasyn2.apply(lambda row: 1 if (row['gender_id'] == 1 and row['age_id'] == 2) or (row['gender_id'] == 2 and row['age_id'] == 2) else 0, axis=1)
 
-#este parte quita de la base de datos las columnas las cuales no contienen valores numericos y que no se vayan a utilizar despues
+#esta parte quita de la base de datos las columnas las cuales no contienen valores numericos y que no se vayan a utilizar despues
 df_adasyn2.drop(["id","user_id","email","ip_address","created_at","start_datetime","locale","session_id"],axis=1,inplace=True) 
 
 #aqui se guarda la base de datos completa y en otra se guarda solo la columna clase
